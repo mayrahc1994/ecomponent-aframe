@@ -10,18 +10,24 @@
     <a-scene>
 
     <a-entity environment= 
-    "preset: default; 
-    skyType: gradient; 
+    "preset: forest; 
+    skyType: atmosphere; 
     skyColor: #8904B1;
     horizonColor: #FF0040;
     lighting: distant; 
-    ground:noise;
-    groundYScale: 4; 
-    groundTexture: walkernoise; 
-    groundColor: #3B240B; 
-    groundColor2: #3B170B; 
+    fog: 0.8;
+    shadow:false;
+    ShadowSize: 7;
+    stagesize: 150;
+    ground:hills;
+    groundYScale: 10; 
+    groundTexture: checkerboard; 
+    groundColor: pink;
+    groundColor2: orange; 
+    groundDensity: 45;
+    groundFrequency: 8;
     dressing: mushrooms; 
-    dressingAmount: 20; 
+    dressingAmount: 50; 
     dressingColor: #DF01D7;
     dressingScale: 1;
     dressingVariance:1 1 1;
@@ -29,10 +35,15 @@
     grid: 2x2;
     gridColor: #FFFF00"> </a-entity>
 
-    <a-box color="blue" position=" 0 2 -4"> </a-box>
-    
 
+
+    <a-box color="blue" position=" 0 2 -4" rotation="0 0 0" scale="2 2 2"
+      animation="property: rotation; to: 270 270 0; dur: 2000; easing: linear; loop: true"></a-box>
+    <a-torus-knot color="yellow" position="1 1 1" arc="100" p="2" q="3" radius="5"></a-torus-knot>
+    <a-dodecahedron color="lilac" position="7 5 4" rotation="0 0 0"  dur="1000" radius="4"
+    animation="property: rotation; to: 360 0 0; dur: 2000; easing: linear; loop: true"></a-dodecahedron>
     <a-camera position="0 5 0"></a-camera>
+    <a-sphere position="-9 2 5" color="green" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear" ></a-sphere>
    
   </a-scene>
   </body>
